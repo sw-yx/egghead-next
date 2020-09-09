@@ -1,6 +1,6 @@
 ---
 layout: 'ultimate-guide'
-title: 'The Ultimate Guide to the DOM'
+title: 'No really, what is the DOM?'
 ---
 
 ## “The DOM.”
@@ -31,7 +31,23 @@ The DOM is an API that helps developers interact with “document nodes” withi
 
 You can think of the DOM as the “final output” of your browser after reading your code.
 
-{ visual }
+![](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-2.jpg)
+
+<CodeBox>
+
+```html
+<html>
+  <head></head>
+  <body>
+    <h1></h1>
+    <div>
+      <p></p>
+    </div>
+  </body>
+</html>
+```
+
+</CodeBox>
 
 The DOM can interact with different web page documents like HTML, SVG, and XML. However, we will be focusing on just the HTML in this article.
 
@@ -48,3 +64,30 @@ Let’s just get right down to it, and show you an actual DOM Node Tree (or DOM 
 To the left is the code for a simple HTML web page. To the right is the graphical representation of the HTML code as nodes in a DOM Node Tree. Each element in the HTML like the Paragraph, Link, and Link Text are represented by “nodes.”
 
 The nodes have relationships with other nodes, and can have “parents,” “children,” and “siblings.” You can think of these as you would with any family tree. “Children” of the same “Parent” are “Siblings.”
+
+{visual}
+
+## Types of HTML Nodes
+
+“Nodes” can be thought of in this context as “HTML Elements.” The DOM Tree is a tree structure representing different elements of an HTML page, and each HTML element is a “node.”
+There are 12 different node types in the DOM. Some node types can have “children,” which can be other types of nodes.
+
+_(You can learn more about the HTML DOM node types on w3schools!)_
+
+Let’s see the same DOM Tree from earlier with the node type number label!
+
+[Insert same DOM Tree with the NodeType number and name next to HTML code]
+
+{performance task}
+
+## Finding the Developer Tools in your browser.
+
+Though your browser does not show you the DOM Tree as a “tree” like we saw earlier, you can see the browser’s rendition of the DOM Tree in the Developer Tools. In Chrome, you can access the Developer Tools by clicking on the three vertical dots at the top right corner of the browser, and navigating to More Tools > Developer Tools. You can also right click anywhere on the browser screen, and click on “Inspect.”
+
+[insert visualization of the DevTools Elements Panel with the DOM Tree; maybe a screenshot of a screen with half showing eggo with some text on the page and other half showing the DOM Tree?]
+
+In the Developer Tools, the “Elements” tab can be thought of as the DOM Panel. What shows up there is the browser’s rendition of the DOM Tree. Notice how it doesn’t look like the “branches and nodes” that we illustrated in the previous section. However, each node (or HTML element) is sectioned off by little triangles, and you can inspect each element separately.
+
+## JavaScript can only affect elements in the DOM
+
+One thing to note is that what shows up in the Developer Tools may also not always be the DOM. (I know, I know…)
