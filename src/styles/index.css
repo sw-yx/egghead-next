@@ -29,3 +29,11 @@ h1 {
     @apply text-3xl;
   }
 }
+
+.prose h1, h2, h3, h4, p, ul, ol, li {
+  @apply max-w-2xl mx-auto;
+}
+
+.prose pre {
+  @apply mx-2 px-10 py-8 bg-gray-800 text-gray-200 rounded-md;
+}
