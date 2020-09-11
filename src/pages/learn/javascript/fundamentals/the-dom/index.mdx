@@ -109,7 +109,7 @@ Each element in the HTML like the Paragraph, Link, and Link Text are represented
 
 The nodes have relationships with other nodes, and can have “parents,” “children,” and “siblings.” You can think of these as you would with any family tree. “Children” of the same “Parent” are “Siblings.”
 
-{visual}
+{visual of parent and child nodes}
 
 ## Types of HTML Nodes
 
@@ -141,13 +141,17 @@ Given this short HTML, create and label a DOM Tree, along with the corresponding
 
 ## Finding the Developer Tools in your browser.
 
-Though your browser does not show you the DOM Tree as a “tree” like we saw earlier, you can see the browser’s rendition of the DOM Tree in the Developer Tools. In Chrome, you can access the Developer Tools by clicking on the three vertical dots at the top right corner of the browser, and navigating to More Tools > Developer Tools. You can also right click anywhere on the browser screen, and click on “Inspect.”
+Though your browser does not show you the DOM Tree as a “tree” like we saw earlier, you can see the browser’s rendition of the DOM Tree in the Developer Tools.
+
+In Chrome, you can access the Developer Tools by clicking on the three vertical dots at the top right corner of the browser, and navigating to More Tools > Developer Tools. You can also right click anywhere on the browser screen, and click on “Inspect.”
 
 [insert screenshots of the DevTools Elements Panel with the DOM Tree]
 
 <div style={{ backgroundColor: '#F1F0F4', height: 'auto', display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', margin: '3em', textAlign: 'center' }}>
 
-Step by step walkthrough of opening up dev tools and inspecting elements.
+#### Performance Task
+
+Step by step instructions on opening up dev tools and inspecting elements.
 
 </div>
 
@@ -172,6 +176,24 @@ currentParagraph.textContent = "Magic!"
 
 </div>
 
+## The DOM Tree is not the source code.
+
+Now, you might be thinking, “The Elements tab in the Developer Tools looks suspiciously like the HTML of the website… But didn’t they just say what shows up in the DOM isn’t the HTML?”
+
+The DOM is not the code you write, because the DOM is the result of your code; the final output from your browser when all of your code is crunched, and effects applied.
+
+There are few instances when the DOM is not the same as the source HTML. For example, when the HTML has invalid code, the DOM may fix the invalid HTML before showing it. In that case, when the visitor opens Developer Tools on their browser to inspect the code, they will see corrected HTML code instead of what the code’s author wrote.
+
+Another instance when HTML may not match what shows up in the DOM is when the HTML is modified by JavaScript. When you go to a web page, the browser takes the HTML and converts the HTML elements into the DOM. JavaScript then interacts with the DOM as API for HTML, and changes how elements show up on the browser. By manipulating the DOM with code, you can change how the web page shows up in the browser without changing the HTML.
+
+## JavaScript can only affect elements that exist in the DOM
+
+One thing to note is that what shows up in the Developer Tools may also not always be the DOM. (I know, I know…)
+
+For example, if the code uses CSS pseudo-elements, the DOM does not include it in its tree, because the DOM builds itself from the source HTML document, not the styles applied to the elements (including CSS). Therefore, JavaScript cannot target pseudo-elements because they are not part of the DOM.
+
+Though JavaScript cannot target CSS pseudo-elements, you can interact with the CSS in the Styles tab of the Developer Tools!
+
 ## JavaScript, React, and the DOM
 
 What does the DOM have to do with JavaScript and React? Well JavaScript, and by extension, its library, React, can interact with and manipulate the DOM.
@@ -184,24 +206,6 @@ Change CSS
 Create/react to HTML events
 
 You can use JavaScript to programmatically (“through code”) read or change the DOM.
-
-## JavaScript can only affect elements that exist in the DOM
-
-One thing to note is that what shows up in the Developer Tools may also not always be the DOM. (I know, I know…)
-
-For example, if the code uses CSS pseudo-elements, the DOM does not include it in its tree, because the DOM builds itself from the source HTML document, not the styles applied to the elements (including CSS). Therefore, JavaScript cannot target pseudo-elements because they are not part of the DOM.
-
-Though JavaScript cannot target CSS pseudo-elements, you can interact with the CSS in the Styles tab of the Developer Tools!
-
-## The DOM Tree is not the source code.
-
-Now, you might be thinking, “The Elements tab in the Developer Tools looks suspiciously like the HTML of the website… But didn’t they just say what shows up in the DOM isn’t the HTML?”
-
-The DOM is not the code you write, because the DOM is the result of your code; the final output from your browser when all of your code is crunched, and effects applied.
-
-There are few instances when the DOM is not the same as the source HTML. For example, when the HTML has invalid code, the DOM may fix the invalid HTML before showing it. In that case, when the visitor opens Developer Tools on their browser to inspect the code, they will see corrected HTML code instead of what the code’s author wrote.
-
-Another instance when HTML may not match what shows up in the DOM is when the HTML is modified by JavaScript. When you go to a web page, the browser takes the HTML and converts the HTML elements into the DOM. JavaScript then interacts with the DOM as API for HTML, and changes how elements show up on the browser. By manipulating the DOM with code, you can change how the web page shows up in the browser without changing the HTML.
 
 ## So, the DOM…
 
