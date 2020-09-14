@@ -1,6 +1,6 @@
 ---
 layout: 'ultimate-guide'
-title: 'No really, what is the DOM?'
+title: 'What is the DOM?'
 ---
 
 import DOMScroller from './DOMScroller.js'
@@ -9,7 +9,7 @@ import DOMScroller from './DOMScroller.js'
 
 It seems to appear everywhere the moment you begin looking for resources about JavaScript. Everyone seems to be quick to whip out the acronym and talk about it, but no one seems to have a simple explanation for what it is.
 
-So, what exactly is the DOM? And why is it important for JavaScript and?
+So, what exactly is the DOM? And why is it important for JavaScript?
 
 ## What the DOM is and isn’t
 
@@ -36,11 +36,20 @@ The DOM, or Document Object Model, is an API that helps developers interact with
 
 <Callout>
 
+
 #### What’s an API?
 
 An API lists out operations that developers can use, along with descriptions on what these operations do. The developers then take these APIs to create apps without having to reinvent the wheel.
 
+<p style={{marginBottom: '1em', fontSize: '0.8em', opacity: '0.75'}}>
+  Read freeCodeCamp's article{' '}
+  <a href="https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/">
+    'What is an API? In English, please'
+  </a>
+</p>
+
 </Callout>
+
 
 The DOM tree shows relationships between different “nodes” or elements within a web page, and your web browsers use the DOM Tree to determine how to display web pages.
 
@@ -49,6 +58,7 @@ You can think of the DOM as the “final output” of your browser after reading
 _Four step scroll trigger sequence:_
 
 <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+
 
 <img
   style={{
@@ -66,9 +76,8 @@ _Four step scroll trigger sequence:_
 <html>
   <head></head>
   <body>
-    <nav>
-      <img src="logo.svg" />
-    </nav>
+    <img src="logo.svg" />
+    <nav></nav>
     <h1>Welcome to the DOM</h1>
     <div>
       <p>It's a lovely place</p>
@@ -79,21 +88,24 @@ _Four step scroll trigger sequence:_
 
 </div>
 
-![](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816716/egghead-next-ebombs/wtf-DOM/DOM-HTML-1.jpg)
 
-![](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816716/egghead-next-ebombs/wtf-DOM/DOM-HTML-2.jpg)
+![](https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1599816716/egghead-next-ebombs/wtf-DOM/DOM-HTML-1.jpg)
 
-![](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816716/egghead-next-ebombs/wtf-DOM/DOM-HTML-3.jpg)
+![](https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1599816716/egghead-next-ebombs/wtf-DOM/DOM-HTML-2.jpg)
+
+![](https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1600084432/egghead-next-ebombs/wtf-DOM/Artboard_32.jpg)
 
 The DOM can interact with different web page documents like HTML, SVG, and XML. However, we will be focusing on just the HTML in this article.
 
 <div style={{ backgroundColor: '#F1F0F4', height: 'auto', display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', margin: '3em', textAlign: 'center' }}>
+
 
 ### Quiz Question
 
 What does "DOM" stand for?
 
 </div>
+
 
 ## The DOM Node Tree
 
@@ -103,13 +115,56 @@ The visual representation of the DOM looks like a “tree” of “nodes.” How
 
 Let’s just get right down to it, and show you an actual DOM Node Tree (or DOM Tree, as it’s commonly referred to).
 
-![](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599812699/egghead-next-ebombs/wtf-DOM/dom-1.png)
+<div style={{ width: '100%', height: '1000px', display: 'flex', flexDirection: 'row' }}>
 
-Each element in the HTML like the Paragraph, Link, and Link Text are represented by “nodes.”
 
-The nodes have relationships with other nodes, and can have “parents,” “children,” and “siblings.” You can think of these as you would with any family tree. “Children” of the same “Parent” are “Siblings.”
+<div style={{width: '25%', display: 'flex', flexDirection: 'column', justifyContent: 'start', marginRight: '2em'}}>
 
-{visual of parent and child nodes}
+
+Each element in the HTML like paragraphs, images, and divs are represented by “nodes.”
+
+The nodes have relationships with other nodes, and can have “parents,” “children,” and “siblings.”
+
+You can think of these as you would with any family tree.
+
+“Children” of the same “Parent” are “Siblings.”
+
+</div>
+
+
+<div style={{width: '70%', position: 'relative' }}>
+
+
+<img
+  style={{position: 'absolute', top: 0, left: 0, zIndex: 0}}
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099812/egghead-next-ebombs/wtf-DOM/Artboard_3.jpg"
+/>
+
+<img
+  style={{position: 'absolute', top: 0, left: 0, opacity: 0.7, zIndex: 1}}
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099798/egghead-next-ebombs/wtf-DOM/Artboard_31.png"
+/>
+
+<img
+  style={{position: 'absolute', top: 0, left: 0, opacity: 0.5, zIndex: 2}}
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099804/egghead-next-ebombs/wtf-DOM/Artboard_33.png"
+/>
+
+<img
+  style={{position: 'absolute', top: 0, left: 0, opacity: 0.7, zIndex: 1}}
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099804/egghead-next-ebombs/wtf-DOM/Artboard_35.png"
+/>
+
+<img
+  style={{position: 'absolute', top: 0, left: 0, opacity: 0.5, zIndex: 2}}
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099804/egghead-next-ebombs/wtf-DOM/Artboard_34.png"
+/>
+
+</div>
+
+
+</div>
+
 
 ## Types of HTML Nodes
 
@@ -117,19 +172,22 @@ The nodes have relationships with other nodes, and can have “parents,” “ch
 
 There are 12 different node types in the DOM. Some node types can have “children,” which can be other types of nodes.
 
-{visual graph of node types}
+![](https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600109597/egghead-next-ebombs/wtf-DOM/Artboard_4.png)
 
 <Callout>
+
 
 You can learn more about the HTML DOM node types on [w3schools](https://www.w3schools.com/jsref/prop_node_nodetype.asp)!
 
 </Callout>
+
 
 Let’s see the same DOM Tree from earlier with the node type number label!
 
 [Insert same DOM Tree with the NodeType number and name next to HTML code]
 
 <div style={{ backgroundColor: '#F1F0F4', height: 'auto', display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', margin: '3em', textAlign: 'center' }}>
+
 
 ### Quiz Question
 
@@ -139,15 +197,43 @@ Given this short HTML, create and label a DOM Tree, along with the corresponding
 
 </div>
 
+
 ## Finding the Developer Tools in your browser.
 
 Though your browser does not show you the DOM Tree as a “tree” like we saw earlier, you can see the browser’s rendition of the DOM Tree in the Developer Tools.
 
 In Chrome, you can access the Developer Tools by clicking on the three vertical dots at the top right corner of the browser, and navigating to More Tools > Developer Tools. You can also right click anywhere on the browser screen, and click on “Inspect.”
 
-[insert screenshots of the DevTools Elements Panel with the DOM Tree]
+<img
+  style={{
+    width: '80%',
+    margin: '3em auto',
+    boxShadow:
+      '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    border: '1px solid rgba(0, 0, 0, 0.1)',
+    borderRadius: '0.2em',
+  }}
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600110509/egghead-next-ebombs/wtf-DOM/Chrome_Mac_OS.png"
+/>
+
+In the Developer Tools, the “Elements” tab can be thought of as the DOM Panel. What shows up there is the browser’s rendition of the DOM Tree.
+
+<img
+  style={{
+    width: '80%',
+    margin: '3em auto',
+    boxShadow:
+      '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    border: '1px solid rgba(0, 0, 0, 0.1)',
+    borderRadius: '0.2em',
+  }}
+  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600110509/egghead-next-ebombs/wtf-DOM/Chrome_Mac_OS-1.png"
+/>
+
+Notice how it doesn’t look like the “branches and nodes” that we illustrated in the previous section. However, each node (or HTML element) is sectioned off by little triangles, and you can inspect each element separately.
 
 <div style={{ backgroundColor: '#F1F0F4', height: 'auto', display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', margin: '3em', textAlign: 'center' }}>
+
 
 #### Performance Task
 
@@ -155,9 +241,6 @@ Step by step instructions on opening up dev tools and inspecting elements.
 
 </div>
 
-In the Developer Tools, the “Elements” tab can be thought of as the DOM Panel. What shows up there is the browser’s rendition of the DOM Tree.
-
-Notice how it doesn’t look like the “branches and nodes” that we illustrated in the previous section. However, each node (or HTML element) is sectioned off by little triangles, and you can inspect each element separately.
 
 ## How can I interact with the DOM?
 
@@ -167,6 +250,7 @@ Because the changes you make by interacting with the DOM only persist during the
 
 <div style={{ backgroundColor: '#F1F0F4', height: 'auto', display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', margin: '3em', textAlign: 'center' }}>
 
+
 Copy and paste this code into the console:
 
 let currentParagraph = document.querySelector("#thisParagraph");
@@ -175,6 +259,7 @@ currentParagraph.textContent = "Magic!"
 ----- we'll assign the id "thisParagraph" to the current paragraph for this to work ------
 
 </div>
+
 
 ## The DOM Tree is not the source code.
 
