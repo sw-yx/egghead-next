@@ -29,7 +29,7 @@ export default function DOMScroller({children}) {
         opacity: 0,
       })
       .to([img1.current], {
-        x: '228px',
+        x: '268px',
         y: '-65px',
         scale: 0.9,
       })
@@ -62,6 +62,8 @@ export default function DOMScroller({children}) {
           top: '40px',
           margin: '0 auto',
           zIndex: 0,
+          width: '110%',
+          marginLeft: '-5%',
         }}
       >
         <img
@@ -74,7 +76,7 @@ export default function DOMScroller({children}) {
           }}
           src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599817004/egghead-next-ebombs/wtf-DOM/dom1.jpg"
         />
-        <span ref={codeBox} style={{flexBasis: 'fill'}}>
+        <span ref={codeBox} style={{width: '100%', marginLeft: '2em'}}>
           {children}
         </span>
       </div>
