@@ -180,26 +180,28 @@ One thing to note is that what shows up in the Developer Tools may _also_ not al
 
 For example, if the code uses **CSS pseudo-elements**, the DOM does not include it in its tree, because the DOM builds itself from the source HTML document, not the styles applied to the elements (including CSS). Therefore, JavaScript cannot target pseudo-elements because they are not part of the DOM.
 
-Though JavaScript cannot target CSS pseudo-elements, you can interact with the CSS in the Styles tab of the Developer Tools!
+Though JavaScript cannot target CSS pseudo-elements, you can still interact with the CSS in the Styles tab of the Developer Tools!
 
-## JavaScript, React, and the DOM
+## JavaScript and the DOM
 
-What does the DOM have to do with JavaScript and React? Well JavaScript, and by extension, its library, React, can interact with and manipulate the DOM.
+What does the DOM have to do with JavaScript? Well JavaScript can interact with and manipulate the DOM.
 
-When the DOM and JavaScript get together, it can create dynamic HTML to make your web page do all the fancy effects we’ve come to love and expect from modern websites.
+When we combine the DOM with JavaScript, we're able to create dynamic HTML and make our web pages do all the fancy effects we’ve come to love and expect from modern websites.
 
 ### JavaScript can…
 
-- Change/add/remove HTML elements and attributes
-- Change CSS
-- Create/react to HTML events
+- Change, add, or remove HTML elements and attributes
+- Change CSS styles
+- Create and react to HTML events like clicks or hovers
 
-You can use JavaScript to programmatically (“through code”) read or change the DOM.
+You can use JavaScript to read or change the DOM "programmatically" (aka. "through code").
 
 ## So, the DOM…
 
-We went through a lot of information about the DOM in this article, and your mind might be spinning… And that’s ok! You’ll be working with and manipulating the DOM a lot as you progress through your JavaScript journey, and will no doubt become very friendly with it.
+We went through a lot of information about the DOM in this article, and your mind might be spinning… And that’s ok!
 
-In the meantime, know that it’s a type of API that helps you build documents, as well as add/modify/delete elements within these said documents.
+You’ll be working with and manipulating the DOM a lot as you progress through your JavaScript journey, and will no doubt become very friendly with it.
 
-Your web browser uses the DOM to determine how to display web pages to your audiences, and by using coding languages like JavaScript, you can manipulate the DOM to change how the website shows up to visitors without changing the source HTML.
+You just need to understand that it’s a type of API that helps you build documents on the web (also known as websites), as well as add, modify, and delete elements within these documents.
+
+Your web browser uses the DOM to determine how to display web pages to your audiences. By using coding languages like JavaScript, you can manipulate the DOM to change how the website shows up to visitors without changing the source HTML.
