@@ -6,6 +6,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function DOMScroller({children}) {
   const triggerRef = useRef(null)
+  const codeBox = useRef(null)
+  const img1 = useRef(null)
   const img2 = useRef(null)
   const img3 = useRef(null)
   const img4 = useRef(null)
@@ -23,6 +25,14 @@ export default function DOMScroller({children}) {
     })
 
     timeline
+      .to([codeBox.current], {
+        opacity: 0,
+      })
+      .to([img1.current], {
+        x: '228px',
+        y: '-65px',
+        scale: 0.9,
+      })
       .to([img2.current], {
         opacity: 1,
       })
@@ -55,6 +65,7 @@ export default function DOMScroller({children}) {
         }}
       >
         <img
+          ref={img1}
           style={{
             margin: '0 1em',
             justifyContent: 'flex-end',
@@ -63,7 +74,9 @@ export default function DOMScroller({children}) {
           }}
           src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599817004/egghead-next-ebombs/wtf-DOM/dom1.jpg"
         />
-        <span style={{flexBasis: 'fill'}}>{children}</span>
+        <span ref={codeBox} style={{flexBasis: 'fill'}}>
+          {children}
+        </span>
       </div>
       <img
         ref={img2}
