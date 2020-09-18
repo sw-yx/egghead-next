@@ -4,6 +4,7 @@ title: 'What is the DOM?'
 ---
 
 import DOMScroller from './DOMScroller.js'
+import NodesScroller from './NodesScroller.js'
 
 ## “The DOM.”
 
@@ -53,47 +54,23 @@ The DOM tree shows relationships between different “nodes” (or elements) wit
 
 You can think of the DOM as the “final output” of your browser after reading your code.
 
-_Broken sequence:_
+<DOMScroller>
 
-<DOMScroller />
-
----
-
-<div style={{ display: 'flex', justifyContent: 'space-around' }}>
-
-<img
-  style={{
-    margin: '0 1em',
-    justifyContent: 'flex-end',
-    objectFit: 'contain',
-    width: '320px',
-    height: 'auto',
-  }}
-  alt=""
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_320/v1599817004/egghead-next-ebombs/wtf-DOM/Layer_7.jpg"
-/>
-
-```html
+```
 <html>
-  <head></head>
-  <body>
-    <img src="logo.svg" />
-    <nav></nav>
-    <h1>Welcome to the DOM</h1>
-    <div>
-      <p>It's a lovely place</p>
+ <head></head>
+ <body>
+   <img src="logo.svg" />
+   <nav></nav>
+   <h1>Welcome to the DOM</h1>
+   <div>
+     <p>It's a lovely place</p>
     </div>
-  </body>
+ </body>
 </html>
 ```
 
-</div>
-
-![](https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1599816716/egghead-next-ebombs/wtf-DOM/DOM-HTML-1.jpg)
-
-![](https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1599816716/egghead-next-ebombs/wtf-DOM/DOM-HTML-2.jpg)
-
-![](https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1600084432/egghead-next-ebombs/wtf-DOM/Artboard_32.jpg)
+</DOMScroller>
 
 The DOM can interact with different web page documents like HTML, SVG, and XML. However, we will be focusing on just the HTML in this article.
 
@@ -113,50 +90,7 @@ The visual representation of the DOM looks like a “tree” of “nodes.” How
 
 Let’s just get right down to it, and show you an actual **DOM Node Tree** (or **DOM Tree**, as it’s commonly referred to).
 
-<div style={{ width: '100%', height: '1000px', display: 'flex', flexDirection: 'row' }}>
-
-<div style={{width: '25%', display: 'flex', flexDirection: 'column', justifyContent: 'start', marginRight: '2em'}}>
-
-Each element in the HTML like paragraphs, images, and divs are represented by “nodes.”
-
-The nodes have relationships with other nodes, and can have “parents,” “children,” and “siblings.”
-
-You can think of these relationships as you would with any family tree.
-
-“Children” of the same “Parent” are “Siblings.”
-
-</div>
-
-<div style={{width: '70%', position: 'relative' }}>
-
-<img
-  style={{position: 'absolute', top: 0, left: 0, zIndex: 0}}
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099812/egghead-next-ebombs/wtf-DOM/Artboard_3.jpg"
-/>
-
-<img
-  style={{position: 'absolute', top: 0, left: 0, opacity: 0.7, zIndex: 1}}
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099798/egghead-next-ebombs/wtf-DOM/Artboard_31.png"
-/>
-
-<img
-  style={{position: 'absolute', top: 0, left: 0, opacity: 0.5, zIndex: 2}}
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099804/egghead-next-ebombs/wtf-DOM/Artboard_33.png"
-/>
-
-<img
-  style={{position: 'absolute', top: 0, left: 0, opacity: 0.7, zIndex: 1}}
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099804/egghead-next-ebombs/wtf-DOM/Artboard_35.png"
-/>
-
-<img
-  style={{position: 'absolute', top: 0, left: 0, opacity: 0.5, zIndex: 2}}
-  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600099804/egghead-next-ebombs/wtf-DOM/Artboard_34.png"
-/>
-
-</div>
-
-</div>
+<NodesScroller />
 
 ## Types of HTML Nodes
 
@@ -196,7 +130,7 @@ In Chrome, you can access the Developer Tools by clicking on the three vertical 
 
 <img
   style={{
-    width: '80%',
+    width: '100%',
     margin: '3em auto',
     boxShadow:
       '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
@@ -210,7 +144,7 @@ In the Developer Tools, the “Elements” tab can be thought of as the DOM Pane
 
 <img
   style={{
-    width: '80%',
+    width: '100%',
     margin: '3em auto',
     boxShadow:
       '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
@@ -232,7 +166,7 @@ Step by step instructions on opening up dev tools and inspecting elements.
 
 ## The DOM Tree is not the source code
 
-Now, you might be thinking, “The Elements tab in the Developer Tools looks suspiciously like the HTML of the website… But didn’t they just say what shows up in the DOM isn’t the HTML?”
+Now, you might be thinking, “The Elements tab in the Developer Tools looks suspiciously like the HTML of the website… But didn’t they just say what shows up in the HTML isn’t the DOM?”
 
 The DOM is not the code you write, because the DOM is the _result of your code_; the final output from your browser when all of your code is crunched, and effects applied.
 

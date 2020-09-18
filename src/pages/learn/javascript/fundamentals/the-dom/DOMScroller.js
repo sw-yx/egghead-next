@@ -4,56 +4,99 @@ import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function DOMScroller() {
-  const imageRef = useRef(null)
-  // const [isLoading, setIsLoading] = useState(true)
-  // const [images, setImages] = useState([])
-
-  const altText =
-    'The DOM is the “final output” of your browser after reading the HTML'
+export default function DOMScroller({children}) {
+  const triggerRef = useRef(null)
+  const img2 = useRef(null)
+  const img3 = useRef(null)
+  const img4 = useRef(null)
+  // const imageRef = useRef(null)
+  // const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: '#triggerElement',
-        start: 'top 50%',
-        end: 'bottom 80%',
-        markers: true,
+        trigger: [triggerRef.current],
+        start: 'top top',
         scrub: true,
+        pin: true,
       },
     })
 
     timeline
-      .to([imageRef.current], {
-        attr: {
-          src:
-            'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816716/egghead-next-ebombs/wtf-DOM/dom2.jpg',
-        },
+      .to([img2.current], {
+        opacity: 1,
       })
-      .to([imageRef.current], {
-        attr: {
-          src:
-            'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816717/egghead-next-ebombs/wtf-DOM/dom3.jpg',
-        },
+      .to([img3.current], {
+        opacity: 1,
       })
-      .to([imageRef.current], {
-        attr: {
-          src:
-            'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600084432/egghead-next-ebombs/wtf-DOM/dom4.jpg',
-        },
+      .to([img4.current], {
+        opacity: 1,
       })
   }, [])
 
   return (
     <div
-      style={{width: '100%', height: '700px', marginBottom: '10%'}}
-      id="triggerElement"
+      ref={triggerRef}
+      style={{
+        maxWidth: '820px',
+        margin: '0 auto',
+        marginBottom: '10%',
+        position: 'relative',
+        height: '820px',
+      }}
     >
+      <div
+        style={{
+          display: 'flex',
+          position: 'absolute',
+          top: '40px',
+          margin: '0 auto',
+          zIndex: 0,
+        }}
+      >
+        <img
+          style={{
+            margin: '0 1em',
+            justifyContent: 'flex-end',
+            objectFit: 'contain',
+            maxWidth: '300px',
+          }}
+          src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599817004/egghead-next-ebombs/wtf-DOM/dom1.jpg"
+        />
+        <span style={{flexBasis: 'fill'}}>{children}</span>
+      </div>
       <img
-        style={{maxWidth: '600px', maxHeight: '100%', margin: '0 auto'}}
-        ref={imageRef}
-        src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599817004/egghead-next-ebombs/wtf-DOM/dom1.jpg"
-        alt={altText}
+        ref={img2}
+        style={{
+          position: 'absolute',
+          opacity: 0,
+          top: 0,
+          maxWidth: '100%',
+          zIndex: 1,
+        }}
+        src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816716/egghead-next-ebombs/wtf-DOM/dom2.jpg"
+      />
+      <img
+        ref={img3}
+        style={{
+          position: 'absolute',
+          opacity: 0,
+          top: 0,
+          maxWidth: '100%',
+          zIndex: 2,
+        }}
+        src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816717/egghead-next-ebombs/wtf-DOM/dom3.jpg"
+      />
+      <img
+        ref={img4}
+        style={{
+          position: 'absolute',
+          opacity: 0,
+          top: 0,
+          maxWidth: '100%',
+          zIndex: 3,
+        }}
+        src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600084432/egghead-next-ebombs/wtf-DOM/dom4.jpg"
       />
     </div>
   )
