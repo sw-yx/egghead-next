@@ -17,6 +17,19 @@ export default function DOMScroller({children}) {
   // const imageRef = useRef(null)
   // const [isLoaded, setIsLoaded] = useState(false)
 
+  const altText =
+    'An HTML document going into a browser and rendering as node elements on the DOM'
+
+  const imageStyle = {
+    position: 'absolute',
+    opacity: 0,
+    top: 0,
+    maxWidth: '100%',
+    [bpMaxMD]: {
+      display: 'none',
+    },
+  }
+
   useEffect(() => {
     ScrollTrigger.matchMedia({
       '(min-width: 1024px)': function () {
@@ -61,12 +74,13 @@ export default function DOMScroller({children}) {
         height: '150vh',
         marginBottom: '-55vh',
         [bpMaxMD]: {
-          height: '110vh',
+          height: 'auto',
+          marginBottom: 0,
         },
       }}
     >
       <div
-        style={{
+        css={{
           display: 'flex',
           position: 'absolute',
           top: '40px',
@@ -74,11 +88,14 @@ export default function DOMScroller({children}) {
           zIndex: 3,
           width: '110%',
           marginLeft: '-5%',
+          [bpMaxMD]: {
+            display: 'none',
+          },
         }}
       >
         <img
           ref={img1}
-          style={{
+          css={{
             margin: '0 1em',
             justifyContent: 'flex-end',
             objectFit: 'contain',
@@ -86,40 +103,40 @@ export default function DOMScroller({children}) {
           }}
           src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599817004/egghead-next-ebombs/wtf-DOM/dom1.jpg"
         />
-        <span ref={codeBox} style={{width: '100%', marginLeft: '2em'}}>
+        <span ref={codeBox} css={{width: '100%', marginLeft: '2em'}}>
           {children}
         </span>
       </div>
       <img
         ref={img2}
-        style={{
-          position: 'absolute',
-          opacity: 0,
-          top: 0,
-          maxWidth: '100%',
+        css={{
+          ...imageStyle,
           zIndex: 0,
         }}
         src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816716/egghead-next-ebombs/wtf-DOM/dom2.jpg"
       />
       <img
         ref={img3}
-        style={{
-          position: 'absolute',
-          opacity: 0,
-          top: 0,
-          maxWidth: '100%',
+        css={{
+          ...imageStyle,
           zIndex: 1,
         }}
         src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816717/egghead-next-ebombs/wtf-DOM/dom3.jpg"
       />
       <img
+        alt={altText}
         ref={img4}
-        style={{
-          position: 'absolute',
-          opacity: 0,
-          top: 0,
-          maxWidth: '100%',
+        css={{
+          ...imageStyle,
           zIndex: 2,
+          [bpMaxMD]: {
+            position: 'relative',
+            display: 'block',
+            opacity: 1,
+            maxWidth: '100%',
+            margin: '0 auto',
+            padding: '0 2em',
+          },
         }}
         src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600084432/egghead-next-ebombs/wtf-DOM/dom4.jpg"
       />
