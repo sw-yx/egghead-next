@@ -92,24 +92,31 @@ export default function NodesScroller() {
         labelsTimeline
           .to([nodes1.current], {
             opacity: 1,
+            duration: 2,
           })
           .to([nodes2.current], {
             opacity: 1,
+            duration: 2,
           })
           .to([nodes1.current], {
             opacity: 0,
+            duration: 2,
           })
           .to([nodes2.current], {
             opacity: 0,
+            duration: 2,
           })
           .to([nodes3.current], {
             opacity: 1,
+            duration: 1,
           })
           .to([nodes3.current], {
             opacity: 0,
+            duration: 0.5,
           })
           .to([nodes4.current], {
             opacity: 1,
+            duration: 1,
           })
 
         scrollTimeline.add(labelsTimeline)
@@ -232,7 +239,7 @@ export default function NodesScroller() {
           return (
             <span
               className="rounded-md shadow-md max-w-lg px-8 py-6 border-gray-300 m-auto z-20 bg-white"
-              css={{marginBottom: '200%'}}
+              css={{marginBottom: '270%'}}
             >
               {step}
             </span>

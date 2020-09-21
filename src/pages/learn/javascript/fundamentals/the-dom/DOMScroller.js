@@ -44,20 +44,25 @@ export default function DOMScroller({children}) {
 
         timeline
           .to([codeBox.current], {
+            duration: 1,
             opacity: 0,
           })
           .to([img1.current], {
+            duration: 1,
             x: '268px',
             y: '-65px',
             scale: 0.9,
           })
           .to([img2.current], {
+            duration: 1,
             opacity: 1,
           })
           .to([img3.current], {
+            duration: 2,
             opacity: 1,
           })
           .to([img4.current], {
+            duration: 2,
             opacity: 1,
           })
       },
@@ -71,8 +76,8 @@ export default function DOMScroller({children}) {
         maxWidth: '820px',
         margin: '0 auto',
         position: 'relative',
-        height: '150vh',
-        marginBottom: '-55vh',
+        height: '170vh',
+        marginBottom: '-75vh',
         [bpMaxMD]: {
           height: 'auto',
           marginBottom: 0,
