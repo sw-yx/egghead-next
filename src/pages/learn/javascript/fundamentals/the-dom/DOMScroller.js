@@ -1,5 +1,8 @@
+/** @jsx jsx */
 import React, {useRef, useState, useEffect} from 'react'
 import {gsap} from 'gsap/dist/gsap'
+import {bpMaxMD} from '../../../../../utils/breakpoints.js'
+import {jsx} from '@emotion/core'
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -15,44 +18,51 @@ export default function DOMScroller({children}) {
   // const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: [triggerRef.current],
-        start: 'top top',
-        scrub: true,
-        pin: true,
+    ScrollTrigger.matchMedia({
+      '(min-width: 1024px)': function () {
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: [triggerRef.current],
+            start: 'top top',
+            scrub: true,
+            pin: true,
+          },
+        })
+
+        timeline
+          .to([codeBox.current], {
+            opacity: 0,
+          })
+          .to([img1.current], {
+            x: '268px',
+            y: '-65px',
+            scale: 0.9,
+          })
+          .to([img2.current], {
+            opacity: 1,
+          })
+          .to([img3.current], {
+            opacity: 1,
+          })
+          .to([img4.current], {
+            opacity: 1,
+          })
       },
     })
-
-    timeline
-      .to([codeBox.current], {
-        opacity: 0,
-      })
-      .to([img1.current], {
-        x: '268px',
-        y: '-65px',
-        scale: 0.9,
-      })
-      .to([img2.current], {
-        opacity: 1,
-      })
-      .to([img3.current], {
-        opacity: 1,
-      })
-      .to([img4.current], {
-        opacity: 1,
-      })
   }, [])
 
   return (
     <div
       ref={triggerRef}
-      style={{
+      css={{
         maxWidth: '820px',
         margin: '0 auto',
-        marginBottom: '10%',
         position: 'relative',
-        height: '820px',
+        height: '150vh',
+        marginBottom: '-55vh',
+        [bpMaxMD]: {
+          height: '110vh',
+        },
       }}
     >
       <div
@@ -61,7 +71,7 @@ export default function DOMScroller({children}) {
           position: 'absolute',
           top: '40px',
           margin: '0 auto',
-          zIndex: 0,
+          zIndex: 3,
           width: '110%',
           marginLeft: '-5%',
         }}
@@ -87,7 +97,7 @@ export default function DOMScroller({children}) {
           opacity: 0,
           top: 0,
           maxWidth: '100%',
-          zIndex: 1,
+          zIndex: 0,
         }}
         src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816716/egghead-next-ebombs/wtf-DOM/dom2.jpg"
       />
@@ -98,7 +108,7 @@ export default function DOMScroller({children}) {
           opacity: 0,
           top: 0,
           maxWidth: '100%',
-          zIndex: 2,
+          zIndex: 1,
         }}
         src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599816717/egghead-next-ebombs/wtf-DOM/dom3.jpg"
       />
@@ -109,7 +119,7 @@ export default function DOMScroller({children}) {
           opacity: 0,
           top: 0,
           maxWidth: '100%',
-          zIndex: 3,
+          zIndex: 2,
         }}
         src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600084432/egghead-next-ebombs/wtf-DOM/dom4.jpg"
       />
