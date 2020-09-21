@@ -70,6 +70,51 @@ export default function NodesScroller() {
         scrollTimeline.add(labelsTimeline)
       },
     })
+
+    ScrollTrigger.matchMedia({
+      '(min-width: 320px)': function () {
+        const scrollTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: [pinRef.current],
+            start: 'top top',
+            scrub: true,
+          },
+        })
+
+        const labelsTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: [textRef.current],
+            scrub: true,
+            start: 'top 70%',
+          },
+        })
+
+        labelsTimeline
+          .to([nodes1.current], {
+            opacity: 1,
+          })
+          .to([nodes2.current], {
+            opacity: 1,
+          })
+          .to([nodes1.current], {
+            opacity: 0,
+          })
+          .to([nodes2.current], {
+            opacity: 0,
+          })
+          .to([nodes3.current], {
+            opacity: 1,
+          })
+          .to([nodes3.current], {
+            opacity: 0,
+          })
+          .to([nodes4.current], {
+            opacity: 1,
+          })
+
+        scrollTimeline.add(labelsTimeline)
+      },
+    })
   }, [])
 
   return (
@@ -87,8 +132,9 @@ export default function NodesScroller() {
           width: '100%',
           marginLeft: 0,
           flexDirection: 'column',
-          height: '100%',
-          marginBottom: '2em',
+          height: '180%',
+          marginBottom: '110%',
+          zIndex: 0,
         },
       }}
     >
@@ -103,7 +149,9 @@ export default function NodesScroller() {
             width: '100%',
             justifyContent: 'center',
             height: 'auto',
-            marginBottom: '8em',
+            marginBottom: '10em',
+            position: 'sticky',
+            top: 0,
           },
         }}
       >
@@ -183,8 +231,8 @@ export default function NodesScroller() {
         {textSteps.map((step) => {
           return (
             <span
-              className="rounded-md shadow-md max-w-md px-8 py-6 border-gray-300 m-auto"
-              css={{marginBottom: '20em', [bpMaxMD]: {marginBottom: '2em'}}}
+              className="rounded-md shadow-md max-w-lg px-8 py-6 border-gray-300 m-auto z-20 bg-white"
+              css={{marginBottom: '200%'}}
             >
               {step}
             </span>
