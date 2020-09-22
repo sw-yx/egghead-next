@@ -15,7 +15,7 @@
 }
 
 h1 {
-  @apply text-lg;
+  @apply text-xl;
 }
 
 @screen lg {
@@ -24,13 +24,7 @@ h1 {
   }
 }
 
-@screen xl {
-  h1 {
-    @apply text-3xl;
-  }
-}
-
-.prose h1, h2, h3, h4, p, ul, ol, li {
+.prose h1, h2, h3, h4, p, ul, ol, li, span {
   @apply max-w-2xl mx-auto;
 }
 

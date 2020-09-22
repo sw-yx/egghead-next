@@ -30,7 +30,7 @@ const DefaultLayout: FunctionComponent<LayoutProps> = ({
         }}
         canonical={url}
       />
-      <div className="prose max-w-none">
+      <div className="prose max-w-none text-xl">
         <h1>{title}</h1>
         {children}
       </div>
