@@ -28,3 +28,8 @@ h1 {
 .prose pre {
   @apply mx-2 px-10 py-8 bg-gray-800 text-gray-200 rounded-md;
 }
+
+/* Contain typography styles */
+.prose h1, h2, h3, h4, p, ul, ol, li, span {
+  @apply max-w-2xl mx-auto
+}
