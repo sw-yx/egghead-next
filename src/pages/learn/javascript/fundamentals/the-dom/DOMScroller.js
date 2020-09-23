@@ -102,7 +102,7 @@ export default function DOMScroller({children}) {
           ref={img1}
           css={{
             margin: '0 1em',
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-start',
             objectFit: 'contain',
             maxWidth: '300px',
           }}

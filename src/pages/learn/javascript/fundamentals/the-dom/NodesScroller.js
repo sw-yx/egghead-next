@@ -92,19 +92,19 @@ export default function NodesScroller() {
         labelsTimeline
           .to([nodes1.current], {
             opacity: 1,
-            duration: 2,
+            duration: 0.3,
           })
           .to([nodes2.current], {
             opacity: 1,
-            duration: 2,
+            duration: 0.3,
           })
           .to([nodes1.current], {
             opacity: 0,
-            duration: 2,
+            duration: 0.3,
           })
           .to([nodes2.current], {
             opacity: 0,
-            duration: 2,
+            duration: 0.3,
           })
           .to([nodes3.current], {
             opacity: 1,
@@ -116,7 +116,7 @@ export default function NodesScroller() {
           })
           .to([nodes4.current], {
             opacity: 1,
-            duration: 1,
+            duration: 0.5,
           })
 
         scrollTimeline.add(labelsTimeline)
@@ -127,20 +127,19 @@ export default function NodesScroller() {
   return (
     <div
       css={{
-        width: '130%',
-        marginLeft: '-15%',
-        height: '220vh',
+        width: '150%',
+        marginLeft: '-25%',
+        height: '3400px',
         display: 'flex',
         flexDirection: 'row',
         paddingTop: '1em',
         marginTop: '-3%',
-        marginBottom: '105vh',
+        marginBottom: '135%',
         [bpMaxMD]: {
-          width: '100%',
           marginLeft: 0,
+          width: '100%',
           flexDirection: 'column',
-          height: '180%',
-          marginBottom: '110%',
+          marginBottom: '70%',
           zIndex: 0,
         },
       }}
@@ -225,7 +224,7 @@ export default function NodesScroller() {
           width: '40%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'end',
+          justifyContent: 'flex-end',
           paddingLeft: '4em',
           marginTop: '80vh',
           [bpMaxMD]: {
